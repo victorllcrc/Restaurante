@@ -1,0 +1,7 @@
+cymysql==0.9.13
+Django==2.2
+django-cymysql==2.2.0
+Pillow==6.0.0
+psycopg2==2.8.2
+pytz==2019.1
+sqlparse==0.3.0
