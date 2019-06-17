@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from rest_framework.authtoken import views
 
 urlpatterns = [
+
+    # path se contact
+    path('deadpool/', include('deadpool.urls')),
+
     # path se contact
     path('contact/', include('contact.urls')),
 
@@ -36,7 +41,15 @@ urlpatterns = [
     #paths del admin
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += [
+    path('deadpoll/auth', include('rest_framework.urls')),
+]
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+#Personalizar los titulos del admin
+admin.site.site_header = "La Caffeteria Chupetin"
+admin.site.index_title = "Panel de adminisstracion"
+admin.site.site_title = "La Caffeteria"
