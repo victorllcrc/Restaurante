@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'services.apps.ServicesConfig',
     'social.apps.SocialConfig',
     'pages.apps.PagesConfig',
+    'reserva',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,8 @@ WSGI_APPLICATION = 'restaurante.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'mysql_cymysql',
@@ -93,7 +96,17 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'DSIRestaurante2',
+        'HOST': 'localhost',
+        #'USER': 'ejemplo',
+        #'PASSWORD': 'ejemplo',
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
