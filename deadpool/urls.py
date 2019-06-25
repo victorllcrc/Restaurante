@@ -2,5 +2,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns =[
-    path('',DeadpoolList.as_view(), name='deadpool'),
+    path('deapool',DeadpoolList.get_object, name='deadpool'),
 ]

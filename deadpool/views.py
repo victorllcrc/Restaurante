@@ -2,8 +2,9 @@ from rest_framework import generics
 from .models import deadpool
 from .serializers import DeadpoolSerializer
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
-class DeadpoolList(generics.ListCreateAPIView):
+class DeadpoolList(): #generics.ListCreateAPIView):
 
     queryset = deadpool.objects.all()
     serializer_class = DeadpoolSerializer
@@ -13,6 +14,8 @@ class DeadpoolList(generics.ListCreateAPIView):
         obj = get_object_or_404(
             queryset,
             pk=self.kwargs['id'],
+
         )
+
         return obj
 
