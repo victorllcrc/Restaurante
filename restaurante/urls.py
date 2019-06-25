@@ -23,6 +23,10 @@ urlpatterns = [
     # path se contact
     path('deadpool/', include('deadpool.urls')),
 
+
+# path se reserva
+    path('reserva/', include('reserva.urls')),
+
     # path se contact
     path('contact/', include('contact.urls')),
 

@@ -10,19 +10,4 @@ def about (request):
 def store (request):
     return render (request,"core/store.html")
 
-def reserva (request):
-    return render (request,"core/reserva.html")
-
-def pago (request):
-    return render (request,"core/pago.html")
-    
-def mesa (request):
-    return render (request,"core/mesa.html")
-
-def menu (request):
-    return render (request,"core/menu.html")
-def final (request):
-    return render (request,"core/final.html")
-def carro (request):
-    return render (request,"core/carro.html")
 
