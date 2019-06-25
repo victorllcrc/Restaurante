@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>{% block title %}{% endblock %} | La Caffettiera</title>
+    <title>{% block title %}{% endblock %} | El Puntillo Criollo</title>
 
     {% load static %}
 
@@ -22,20 +21,61 @@
 
       <!-- Estilos -->
     <link href="{% static 'core/css/business-casual.css' %}" rel="stylesheet">
+    <!-- Fecha y Hora-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+ $.datepicker.regional['es'] = {
+ closeText: 'Cerrar',
+ prevText: '< Ant',
+ nextText: 'Sig >',
+ currentText: 'Hoy',
+ monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+ monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+ dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+ dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+ dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+ weekHeader: 'Sm',
+ dateFormat: 'dd/mm/yy',
+ firstDay: 1,
+ isRTL: false,
+ showMonthAfterYear: false,
+ yearSuffix: ''
+ };
+ $.datepicker.setDefaults($.datepicker.regional['es']);
+$(function () {
+$("#datepicker").datepicker();
+});
+</script>
+  <!--script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script-->
+
+  <!--Metodo de Pago-->
+<style>
+.credit-card-div  span { padding-top:10px; }
+.credit-card-div img { padding-top:30px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }
+</style>
 
   </head>
 
   <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      <span class="site-heading-upper text-primary mb-3">L'autentico caffè d'italia</span>
-      <span class="site-heading-lower">La Caffettiera</span>
+      <span class="site-heading-upper text-primary mb-3">Restaurante</span>
+      <span class="site-heading-lower">El Puntillo Criollo</span>
     </h1>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">La Caffettiera</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">El Puntillo Criollo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,6 +98,9 @@
             </li>
             <li class="nav-item {% if request.path|slice:":6" == '/blog/' %}active {% endif %} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li class="nav-item {% if request.path == '/reserva/' %}active {% endif %} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'reserva' %}">Reserva</a>
             </li>
           </ul>
         </div>
@@ -104,12 +147,12 @@
                 <a href="{% url 'page' page.id %}" class="link">{{page.title}}</a>{% if not forloop.last %}· {% endif %}
             {% endfor %}
 		</p>
-        <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
+        <p class="m-0 mbt1">&copy; El Puntillo Criollo 2019</p>
       </div>
 	</footer>
 
     <!-- Bootstrap -->
-    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    
     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   </body>

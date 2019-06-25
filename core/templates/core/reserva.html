@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}Reserva{% endblock %}
+{% block content %}
+<section class="page-section cta text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Horario de Atención</span>
+            <!--span class="section-heading-lower">Garantizado</span-->
+          </h2>
+          <p class="mb-0">Lunes a domingo de 1:00 pm a 10:00 pm</p>
+        </div>
+          <a class="btn btn-primary " href="{% url 'mesa' %}">Reservar</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
