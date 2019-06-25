@@ -9,5 +9,6 @@ urlpatterns = [
     path('pago/', views.pago, name="pago"),
     path('mesa/', views.mesa, name="mesa"),
     path('menu/', views.menu, name="menu"),
-    path('final/', views.menu, name="final")
+    path('final/', views.final, name="final"),
+    path('carro/', views.carro, name="carro")
 ]

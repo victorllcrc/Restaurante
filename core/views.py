@@ -23,4 +23,6 @@ def menu (request):
     return render (request,"core/menu.html")
 def final (request):
     return render (request,"core/final.html")
+def carro (request):
+    return render (request,"core/carro.html")
 
