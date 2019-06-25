@@ -5,6 +5,7 @@
 {% block title %}Contacto{% endblock %}
 
 {% block content %}
+
 <section class="page-section about-heading">
   <div class="container">
     <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{% static 'core/img/contact.jpg' %}" alt="">
@@ -32,6 +33,21 @@
                     </div>
                     {{form.name.errors}}
                 </div>
+
+                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+  {{ form.fecha }}
+  <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+  </div>
+</div>
+
+                <div class="form-group">
+                    <label>Nombre *</label>
+                    <div class="input-group">
+                        {{form.fecha}}
+                    </div>
+                    {{form.fecha.errors}}
+                </div>
                 <div class="form-group">
                     <label>Email *</label>
                     <div class="input-group">
@@ -58,4 +74,6 @@
     </div>
   </div>
 </section>
+
+
 {% endblock %}

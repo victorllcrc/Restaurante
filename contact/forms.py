@@ -9,3 +9,12 @@ class ContactForm(forms.Form):
     content = forms.CharField(label="contenido", required=True, widget=forms.Textarea(
         attrs={'class':'form-control', 'row': 3, 'placeholder':'Escribe tu msnsaje'}
     ), min_length=10, max_length=1000)
+
+    fecha = forms.DateTimeField(
+        input_formats=['%d/%m/%Y %H:%M'],
+        widget=forms.DateTimeInput(attrs={
+            'class': 'form-control datetimepicker-input',
+            'data-target': '#datetimepicker1'
+        }))
+
+
