@@ -54,6 +54,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #Personalizar los titulos del admin
-admin.site.site_header = "La Caffeteria Chupetin"
-admin.site.index_title = "Panel de adminisstracion"
-admin.site.site_title = "La Caffeteria"
+admin.site.site_header = "El Puntillo Criollo"
+admin.site.index_title = "PANEL DE ADMINISTRACIÓN"
+admin.site.site_title = "El Puntillo Criollo"

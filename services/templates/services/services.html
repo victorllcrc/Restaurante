@@ -12,15 +12,23 @@
           <div class="product-item-title d-flex">
             <div class="bg-faded p-5 d-flex mr-auto rounded">
               <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">{{service.subtitle}}</span>
-                <span class="section-heading-lower">{{service.title}}</span>
+                <span class="section-heading-lower">{{service.nombre}}</span>
+
               </h2>
             </div>
           </div>
           <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{service.image.url}}" alt="">
           <div class="product-item-description d-flex ml-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">{{service.content}}</p>
+            <div class="bg-faded p-5  rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">Descripción: </span>
+              </h2>
+              <p class="mb-0">{{service.descripcion}}</p>
+              <br>
+              <br>
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">Precio: {{service.precio}}</span>
+              </h2>
             </div>
           </div>
         </div>

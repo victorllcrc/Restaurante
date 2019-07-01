@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def reserva(request):
     return render(request, "reserva/reserva.html")
@@ -14,7 +15,9 @@ def mesa(request):
 
 
 def menu(request):
-    return render(request, "reserva/menu.html")
+    from services.models import Service
+    servicios = Service.objects.all()
+    return render(request, "reserva/menu.html",{'servicios':servicios})
 
 
 def final(request):
