@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Post
+from .models import Category, Postt
 # Register your models here.
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'update')
-    list_display = ('title', 'author', 'published', 'post_categories')
+    list_display = ('title', 'author', 'published','post_categories')
     ordering = ('author', 'published')
     search_fields = ('title','content', 'author__username', 'categories__name')
     date_hierarchy = 'published'
@@ -19,4 +19,5 @@ class PostAdmin(admin.ModelAdmin):
     post_categories.short_description = "Categorias"
 
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Post, PostAdmin)
+
+admin.site.register(Postt, PostAdmin)

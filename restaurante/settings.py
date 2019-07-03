@@ -100,7 +100,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'DSIRestaurante2',
+        'NAME': 'DSIRestaurante3',
         'HOST': 'localhost',
         #'USER': 'ejemplo',
         #'PASSWORD': 'ejemplo',

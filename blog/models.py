@@ -1,4 +1,4 @@
-from django.db import models
+from djongo import models
 from django.utils.timezone import now
 from django.contrib.auth.models import User
 
@@ -17,7 +17,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Post(models.Model):
+class Postt(models.Model):
     title = models.CharField(max_length= 200, verbose_name="titulo")
     content = models.TextField(verbose_name="Contenido")
     published = models.DateTimeField(verbose_name="fecha de publicacion", default=now)

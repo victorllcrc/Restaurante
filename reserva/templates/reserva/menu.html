@@ -14,6 +14,8 @@
 
       <!-- Page Features -->
       <div class="row text-center">
+        <form action="{% url 'pago' %}" method="POST">
+          {% csrf_token %}
         {% for e in servicios %}
           <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
@@ -25,24 +27,27 @@
                 <span class="section-heading-upper">Precio: {{e.precio}}</span>
                 </h2>
               </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-primary">Añadir a la reserva</a>
+              <div class="card-footer" >
+                <label class="btn btn-primary" for="{{e.id}}"<>Añadir a la reserva
+                  <input style="opacity:0" type="checkbox" name="elegido" id= "{{e.id}}" value="{{e.id}}" >
+                </label>
               </div>
             </div>
           </div>
         {% endfor %}
-
+           <div class="row">
+            <br>
+            <br>
+            <div class="col-lg-6 text-center">
+              <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar" >
+            </div>
+           </div>
+        </form>
       </div>
       <!-- /.row -->
     </div>
   </div>
-  <div class="row">
-    <br>
-    <br>
-    <div class="col-lg-12 text-center">
-      <a class="btn btn-primary " href="{% url 'pago' %}">Finalizar Reserva</a>
-    </div>
-  </div>
+
 
 </div>
 {% endblock %}
